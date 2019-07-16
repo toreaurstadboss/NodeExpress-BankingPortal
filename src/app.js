@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + 'public'));
 app.get('/', function(request, response){
 
- app.render('index.ejs', { title: 'Index'});
+ response.render('index.ejs', { title: 'Index'});
 }); 
 app.listen(3000);
 console.log("PS Project Running on port 3000!");
