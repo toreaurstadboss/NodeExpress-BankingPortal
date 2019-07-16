@@ -1,17 +1,15 @@
 <%- include('header.ejs') %>
-<form id="transferForm" action="/post" method="post">
-<h1>Profile</h1>
-</h1>
-<div>
+
+  <h1>Profile</h1>
+
+  <div>
     <p><%= user.name %></p>
     <p><%= user.username %></p>
     <p><%= user.phone %></p>
     <p><%= user.email %></p>
     <p><%= user.address %></p>
-</div>
-<br />
-<a href="/">Back to Account Summary</a>
+  </div>
+
+  <br><a href='/'>Back to Account Summary</a>
 
 <%- include('footer.ejs') %>
-
-</form>
