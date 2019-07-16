@@ -17,7 +17,7 @@ describe('Move services routes', () => {
       assert(express !== undefined, 'Has the `express` framework been required in `src/routes/services.js`?');
       assert(router !== undefined, 'Has the express `router` been added to `src/routes/services.js`?');
     }
-    console.log('Router stack length: ' + router.stack.length);
+    //console.log('Router stack length: ' + router.stack.length);
     assert(typeof router === 'function', 'Has the `router` const been set to the express router function?');
     assert(router.stack.length === 4, 'Were all four routes moved to `services.js`?');
 
@@ -35,14 +35,14 @@ describe('Move services routes', () => {
       }
     });
     console.log("Routestack undefined? " + routeStack('/transfer', 'get') === undefined);
-    // assert(routeStack('/transfer', 'get') === undefined, 'The transfer get route has not been removed from `app.js`.');
-    // assert(routeStack('/transfer', 'post') === undefined, 'The transfer post route has not been removed from `app.js`.');
-    // assert(routeStack('/payment', 'get') === undefined, 'The payment get route has not been removed from `app.js`.');
-    // assert(routeStack('/payment', 'post') === undefined, 'The payment post route has not been removed from `app.js`.');
+    assert(routeStack('/transfer', 'get') === undefined, 'The transfer get route has not been removed from `app.js`.');
+    assert(routeStack('/transfer', 'post') === undefined, 'The transfer post route has not been removed from `app.js`.');
+    assert(routeStack('/payment', 'get') === undefined, 'The payment get route has not been removed from `app.js`.');
+    assert(routeStack('/payment', 'post') === undefined, 'The payment post route has not been removed from `app.js`.');
 
-    // assert(R.contains('/transfer', getRoutes), 'The services router does not contain a transfer get route.');
-    // assert(R.contains('/transfer', postRoutes), 'The services router does not contain a transfer post route.');
-    // assert(R.contains('/payment', getRoutes), 'The services router does not contain a payment get route.');
-    // assert(R.contains('/payment', postRoutes), 'The services router does not contain a payment post route.');
+    assert(R.contains('/transfer', getRoutes), 'The services router does not contain a transfer get route.');
+    assert(R.contains('/transfer', postRoutes), 'The services router does not contain a transfer post route.');
+    assert(R.contains('/payment', getRoutes), 'The services router does not contain a payment get route.');
+    assert(R.contains('/payment', postRoutes), 'The services router does not contain a payment post route.');
   });
 });
