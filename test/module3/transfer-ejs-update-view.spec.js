@@ -11,7 +11,7 @@ describe('Update `transfer` view', () => {
       file = fs.readFileSync(path.join(process.cwd(), 'src/views/transfer.ejs'), 'utf8');
       ejs.compile(file);
       $ = cheerio.load(file);
-      console.log("transferform: " + $('#transferForm'));
+      // console.log("transferform: " + $('#transferForm'));
       assert(
         $('#transferForm')
           .attr('method')
