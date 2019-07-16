@@ -17,9 +17,9 @@ router.get('/transfer', function(request, response){
     response.render('transfer');
 });
 
-router.get('/profile', function(request, response){
-    response.render('profile', { user: users[0]});
-});
+// router.get('/profile', function(request, response){
+//     response.render('profile', { user: users[0]});
+// });
 
 
 router.post('/transfer', function(request, response){
@@ -31,4 +31,4 @@ router.post('/transfer', function(request, response){
      response.render("transfer", { message: "Transfer Completed" });
 });
 
-module.exports = router;
+module.exports = router
