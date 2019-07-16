@@ -1,7 +1,12 @@
 <%- include('header.ejs') %>
+<%- include('summary.ejs') %>
 <div class="container">
     <h1><%= title %></h1>
     <a href="/profile">Profile</a>   
 </div>
 <br /><a href="/transfer">Transfer</a>
+<%- include('summary.ejs', { account: accounts.savings }); %>
+<%- include('summary.ejs', { account: accounts.checking }); %>
+<%- include('summary.ejs', { account: accounts.credit }); %>
+
 <%- include('footer.ejs') %>
