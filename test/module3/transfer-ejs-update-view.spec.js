@@ -11,6 +11,7 @@ describe('Update `transfer` view', () => {
       file = fs.readFileSync(path.join(process.cwd(), 'src/views/transfer.ejs'), 'utf8');
       ejs.compile(file);
       $ = cheerio.load(file);
+      console.log("transferform: " + $('#transferForm'));
       assert(
         $('#transferForm')
           .attr('method')
@@ -18,6 +19,7 @@ describe('Update `transfer` view', () => {
         'The form is missing a `method` attribute.'
       );
     } catch (err) {
+      console.log('Error compiling ejs: ' + err);
       assert(err.message.indexOf('compiling ejs') < -1, `Error compiling transfer.ejs`);
     }
     assert(
