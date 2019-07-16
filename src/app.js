@@ -23,7 +23,7 @@ app.get('/credit', function(request, response){
 });
 
 app.get('/profile', function(request, response){
-    response.render('profile', { users: users[0]});
+    response.render('profile', { users: {name: 'Toreboss'}});
 });
 
 app.listen(3000, () => console.log("PS Project Running on port 3000!"));
